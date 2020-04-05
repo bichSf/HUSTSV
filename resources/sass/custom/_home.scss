@@ -1,0 +1,34 @@
+.hero-content-overlay {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    background-image: url('/images/background/volunteer-hands.jpg') !important;
+    background-repeat: repeat;
+    background-size: cover;
+    height: 700px;
+}
+
+.site-navigation ul li a {
+    color: #a70505 !important;
+}
+
+.site-navigation .menu-item-active {
+    color: #067C0E !important;
+}
+
+.site-navigation ul li a:hover {
+    color: #067C0E !important;
+}
+
+.menu-bottom {
+    max-width: 50% !important;
+    margin-left: 65% !important;
+}
+
+.entry-content {
+    margin-top: 35%;
+}
+
+.entry-header {
+    margin-top: -10px;
+}
