@@ -2,7 +2,7 @@
     <div class="footer-widgets p20b p20t fs14 d-none d-sm-block">
         <div class="container">
             <div class="row m10b">
-                <div class="col-12 col-md-6 col-lg-4 p0">
+                <div class="col-12 col-md-4 col-lg-4 p0">
                     <div class="foot-about">
                         <div id="wrapper-title-left-left" class="map">
                             <h2 class="m10b color-gray">{{ trans('attribute.index.title_map') }}</h2>
@@ -14,7 +14,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-5 mt-5 mt-md-0 p0 p45l">
+                <div class="col-12 col-md-4 col-lg-4 mt-5 mt-md-0 p0">
                     <div class="foot-contact">
                         <h2 class="m10b color-gray">{{ trans('attribute.index.menu.contact') }}</h2>
                         <ul>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-md-6 col-lg-3 mt-5 mt-lg-0 p0 p45l">
+                <div class="col-12 offset-md-1 col-md-3 col-lg-3 mt-5 mt-lg-0 p0">
                     <div class="follow-us">
                         <h2 class="m10b color-gray">{{ trans('attribute.index.social_network') }}</h2>
                         <ul class="follow-us flex flex-wrap align-items-center">

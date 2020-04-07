@@ -24,7 +24,6 @@
 @include('layout.user.header')
 <div class="nav-bar">
     <div id="wrapper">
-        <div class="row m0">
 {{--            <div class="col-9 col-lg-3">--}}
 {{--                <div class="site-branding">--}}
 {{--                    <h1 class="site-title">--}}
@@ -32,8 +31,7 @@
 {{--                    </h1>--}}
 {{--                </div>--}}
 {{--            </div>--}}
-            @yield('content')
-        </div>
+        @yield('content')
     </div>
 </div>
 @include('layout.user.footer')

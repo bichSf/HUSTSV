@@ -3,9 +3,9 @@
     width: 100%;
     top: 0;
     background-image: url('/images/background/volunteer-hands.jpg') !important;
-    background-repeat: repeat;
+    background-repeat: round;
     background-size: cover;
-    height: 700px;
+    height: 605px;
 }
 
 .site-navigation ul li a {
@@ -31,4 +31,22 @@
 
 .entry-header {
     margin-top: -10px;
+}
+
+.hero-content-wrap {
+    height: 500px;
+}
+
+@media (max-width: 576px) {
+    .hero-content-overlay {
+        height: 350px;
+    }
+
+    .hero-content-wrap {
+        height: 235px;
+    }
+
+    .entry-content {
+        margin-top: 325px;
+    }
 }
