@@ -27,7 +27,9 @@
                                 <div class="col-4 p0">
                                     <div class="header-bar-menu">
                                         <div class="flex justify-content-center align-items-center p0 m30l">
-                                            <button class="btn btn-light border-0 btn-register bg-white pointer fs14 fs13-sp" type="button">{{ trans('attribute.index.register') }}</button>
+                                            <button type="button" class="btn btn-light border-0 btn-register bg-white pointer fs14 fs13-sp">
+                                                <a href="{{ route(REGISTER_SHOW_SCREEN_REGISTER) }}">{{ trans('attribute.index.register') }}</a>
+                                            </button>
                                             <span>/</span>
                                             <button class="btn btn-light border-0 btn-login bg-white pointer fs14 fs13-sp" type="button">{{ trans('attribute.index.login') }}</button>
                                         </div>

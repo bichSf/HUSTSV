@@ -23,4 +23,21 @@ return [
         'copyright' => 'Copyright',
         'copy_right' => 'Bản quyền thuộc về Trường Đại học Bách khoa Hà Nội',
     ],
+    'main_register' => [
+        'title' => 'Đăng ký tài khoản',
+        'summary_1' => 'Chọn tư cách bạn muốn đăng ký',
+        'summary_2' => 'Nhấn button register ở khung tư cách tương ứng',
+        'btn_register' => 'Register',
+        'card_user' => [
+            'title' => 'Thành viên',
+            'description_1' => 'Tham gia hệ thống',
+            'description_2' => 'Bình luận',
+            'description_3' => 'Vote',
+        ],
+        'card_leader' => [
+            'title' => 'Đội trưởng nhóm tình nguyện',
+            'description_1' => 'Tham gia hệ thống',
+            'description_2' => 'Bình luận',
+        ]
+    ]
 ];

@@ -1,0 +1,42 @@
+#header {
+  background-color: #d8d8d7;
+  min-height: 4vh;
+  color: white;
+  align-items: center;
+}
+
+.logo-header {
+  width: 285px;
+  height: 60px;
+}
+
+.logout-profile {
+  line-height: 60px;
+}
+
+#footer {
+  background-color: #d8d8d7;
+  min-height: 11vh;
+  font-size: 13px;
+  padding: 2% 0;
+}
+
+#footer a {
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  .text-header {
+    margin-bottom: 25px !important;
+  }
+
+  #footer {
+    font-size: 12px;
+    line-height: 3;
+  }
+
+  .div-show-rules {
+    padding-left: 5px !important;
+  }
+}
+
