@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{config('app.locale')}}">
 <head>
-    <title>{{ trans('attribute.common.name_abbreviations') }}</title>
+    <title>{{ trans('attributes.common.name_abbreviations') }}</title>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">

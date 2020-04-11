@@ -172,3 +172,13 @@ body {
     .p25-sp {
         padding: 25px !important; }
 }
+
+input[type=checkbox], input[type=radio] {
+    width: 15px;
+    height: 15px;
+}
+
+a.btn:hover {
+    color: black;
+    background: white;
+}

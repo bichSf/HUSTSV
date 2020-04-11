@@ -27,7 +27,7 @@ return [
         'title' => 'Đăng ký tài khoản',
         'summary_1' => 'Chọn tư cách bạn muốn đăng ký',
         'summary_2' => 'Nhấn button register ở khung tư cách tương ứng',
-        'btn_register' => 'Register',
+        'btn_register' => 'Đăng ký',
         'card_user' => [
             'title' => 'Thành viên',
             'description_1' => 'Tham gia hệ thống',
@@ -39,5 +39,21 @@ return [
             'description_1' => 'Tham gia hệ thống',
             'description_2' => 'Bình luận',
         ]
-    ]
+    ],
+    'register' => [
+        'title_step1' => 'Nhập thông tin',
+        'title_step2' => 'Xác nhận thông tin',
+        'title_step3' => 'Xác thực mail',
+        'title_step4' => 'Hoàn thành đăng ký',
+        'email' => 'Email',
+        'password' => 'Mật khẩu',
+        'step1' => [
+            'explain_password' => '(từ 8 đến 20 ký tự)',
+            'label_checkbox_pwd' => 'Hiển thị mật khẩu',
+            'label_policy_accept' => 'Đã đọc và đồng ý với điều khoản',
+        ],
+        'step2' => [
+            'btn_back' => 'Quay lại',
+        ]
+    ],
 ];

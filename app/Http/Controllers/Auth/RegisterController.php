@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterRequest;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -72,14 +74,46 @@ class RegisterController extends Controller
 
     public function showScreenRegister()
     {
-//        $this->removeSession();
+        $this->removeSession();
         return view('register.main');
     }
 
     public function removeSession()
     {
-        if(session()->exists('data_register')) {
-
+        if(session()->exists('step')) {
+            session()->remove('step');
         }
+        redirect(route(REGISTER_SHOW_SCREEN_1));
+    }
+
+    public function setDataScreenStep1()
+    {
+        session()->put('step', FLAG_ONE);
+
+    }
+
+    public function setDataScreenStep2(Request $request)
+    {
+        $data = $request->all();
+        session()->put('step', FLAG_TWO);
+        return view('register.step2')->with([
+            'email' => $data['email'],
+            'pwd' => $data['password']
+        ]);
+    }
+
+    public function setDataScreenStep3(Request $request)
+    {
+        $data =$request->all();
+        session()->put('step', FLAG_THREE);
+        return view('register.step3')->with([
+            'email' => $data['email'],
+            'pwd' => $data['pwd']
+        ]);
+    }
+
+    public function showScreen1()
+    {
+        return view('register.step1');
     }
 }
