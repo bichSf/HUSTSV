@@ -12,5 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('layout.user.index');
+})->name(USER_HOME);
+
+Route::namespace('Auth')->group(function () {
+   Route::prefix('register')->group(function () {
+      Route::get('/', 'RegisterController@showScreenRegister')->name(REGISTER_SHOW_SCREEN_REGISTER);
+   });
 });
+
+//Route::get('/register', )

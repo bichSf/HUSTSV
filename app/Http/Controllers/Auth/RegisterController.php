@@ -69,4 +69,17 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    public function showScreenRegister()
+    {
+//        $this->removeSession();
+        return view('register.main');
+    }
+
+    public function removeSession()
+    {
+        if(session()->exists('data_register')) {
+
+        }
+    }
 }

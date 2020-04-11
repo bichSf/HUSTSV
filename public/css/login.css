@@ -1,0 +1,170 @@
+.form-group.row.header {
+    border: 1px solid darkgray;
+    min-height: 90px;
+    padding: 0px;
+    display: flex;
+}
+
+.text-count-answer.text-center {
+    width: 70%;
+    background-color: #eaeaea;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.line1 {
+    font-size: 20px;
+}
+
+.text-forgot-pass {
+    margin: auto;
+}
+
+.btn-user {
+    border-left: 1px solid darkgray;
+    padding-right: 0%;
+    margin-left: -16px;
+    height: 100%;
+    right: 0;
+    width: 30%;
+    position: absolute;
+}
+
+.line1.display-center {
+    padding-top: 20px;
+}
+
+.btn-drropdown {
+    background-color: #eaeaea;
+    height: 100%;
+    width: 110%;
+    background-repeat: no-repeat;
+    background-position-x: 10%;
+    background-size: 15%;
+    margin-left: -15px;
+    border-left: 1px solid darkgray;
+    font-size: 20px;
+    padding-top: 5px;
+}
+.dropdown-menu {
+    min-width: auto;
+}
+
+.dropdown-item {
+    height: 80px;
+    z-index: 900;
+}
+
+
+.form-login {
+    background: gray;
+}
+
+.form-login-content {
+    margin: auto;
+    border-radius: 40px;
+    min-height: 450px;
+    width: 80%;
+}
+
+.form-login-body {
+    padding: 5%;
+}
+
+.form-login-header {
+    margin-left: 3%;
+    border-bottom: none;
+    margin-bottom: -25px;
+}
+
+.form-login-title {
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-size: 26px;
+}
+
+button.close.close-modal {
+    margin-top: 1%;
+}
+
+.text-usual {
+    margin-bottom: 2%;
+    text-align: center;
+    font-size: 18px;
+}
+
+button.btn-modal {
+    border: 1px solid darkgray;
+    border-radius: 10px;
+    min-width: 130px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.form-login-footer {
+    padding: 0px;
+    border: none;
+}
+
+.forgot-pass u {
+    color: #870fb9;
+}
+
+img.img-icon {
+    float: left;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+.btn-choose {
+    border: 1px solid darkgray;
+    margin: 5px;
+    height: 78%;
+    width: 98%;
+    font-size: 18px;
+    white-space: normal;
+    word-wrap: break-word;
+    background-color: white;
+    line-height: 2.5;
+}
+
+.text-error {
+    color: red;
+    margin-top: 1%;
+}
+
+.choose {
+    border: solid 1px;
+    width: 80%;
+    margin: 1% auto;
+    padding: 1%;
+
+}
+
+.img-ion {
+    float: left;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid gray;
+}
+
+
+.choose-email {
+    margin-bottom: 15%;
+}
+
+.email-forgot-pass {
+    margin-top: 30px;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+

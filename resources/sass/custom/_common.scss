@@ -1,0 +1,174 @@
+/*====Begin define css=====*/
+//a
+//b
+//c
+//d
+//e
+//f
+.fs12 {
+    font-size: 12px !important; }
+
+.fs14 {
+    font-size: 14px !important; }
+
+.fs43 {
+    font-size: 43px !important; }
+
+.fw-bold {
+    font-weight: bold; }
+//g
+//h
+.h33 {
+    height: 33px; }
+
+.h80 {
+    height: 80px; }
+//i
+//j
+//k
+//l
+//m
+.m0 {
+    margin: 0 !important; }
+
+.m10 {
+    margin: 10px !important; }
+
+.m10b {
+    margin-bottom: 10px !important; }
+
+.m30b {
+    margin-bottom: 30px !important; }
+
+.m15l {
+    margin-left: 15px !important; }
+
+.m20l {
+    margin-left: 20px !important; }
+
+.m30l {
+    margin-left: 30px !important; }
+
+.m50l {
+    margin-left: 50px !important; }
+
+.m10t {
+    margin-top: 10px !important; }
+
+.m25t {
+    margin-top: 25px !important; }
+
+.m30t {
+    margin-top: 30px !important; }
+
+.m70t {
+    margin-top: 70px !important; }
+
+.m30r {
+    margin-right: 30px !important; }
+
+.m-auto {
+    margin: auto !important; }
+//n
+//o
+//p
+.pointer {
+    cursor: pointer !important; }
+
+.p0 {
+    padding: 0 !important; }
+
+.p20b {
+    padding-bottom: 20px !important; }
+
+.p25b {
+    padding-bottom: 25px !important; }
+
+.p25l {
+    padding-left: 25px !important; }
+
+.p45l {
+    padding-left: 45px !important; }
+
+.p0t {
+    padding-top: 0 !important; }
+
+.p20t {
+    padding-top: 20px !important; }
+
+.p25t {
+    padding-top: 25px !important; }
+
+.p25r {
+    padding-right: 25px !important; }
+
+.p30r {
+    padding-right: 30px !important; }
+//q
+//r
+//s
+//t
+//u
+//v
+//w
+.w36 {
+    width: 36px !important; }
+
+.w40 {
+    width: 40px !important; }
+
+.w210 {
+    width: 210px !important; }
+
+.w950 {
+    width: 950px !important; }
+//x
+//w
+//z
+
+/*====End define css=====*/
+body {
+    overflow-x: hidden;
+    font-size: 14px !important;
+}
+
+.bg-black {
+    background-color: #140606 !important; }
+
+.bg-red {
+    background-color: #CC0909 !important; }
+
+.bg-dark-gray {
+    background-color: #252424 !important; }
+
+.bg-white {
+    background-color: #ffffff !important; }
+
+.color-cyan {
+    color: #067C0E !important; }
+
+.color-gray {
+    color: #a9a9a9 !important; }
+
+.color-green {
+    color: #0D8D58 !important; }
+
+@media (max-width: 576px) {
+    .fs13-sp {
+        font-size: 13px !important; }
+
+    .p0-sp {
+        padding: 0 !important; }
+
+    .m0-sp {
+        margin: 0 !important; }
+
+    .m30t-sp {
+        margin-top: 30px !important; }
+
+    .m30l-sp {
+        margin-left: 30px !important; }
+
+    .p25-sp {
+        padding: 25px !important; }
+}
