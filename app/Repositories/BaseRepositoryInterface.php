@@ -1,16 +1,6 @@
 <?php
 namespace App\Repositories;
 
-/**
- * Repository Interface
- *
- * @category  Repositories
- * @package   App\Repositorys
- * @author    Pham Trung Thuan <thuanpt@deha-soft.com>
- * @copyright 2019 CYARea!
- * @license   https://opensource.org/licenses/mit-license.php MIT License
- * @link      https://laravel.com Laravel(tm) Project
- */
 interface RepositoryInterface
 {
     /**

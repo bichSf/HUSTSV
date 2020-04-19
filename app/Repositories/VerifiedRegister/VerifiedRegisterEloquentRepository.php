@@ -114,7 +114,6 @@ class VerifiedRegisterEloquentRepository extends BaseRepository implements Verif
         } else {
             $recordVerifiedRegister = $recordVerifiedRegister->toArray();
         }
-
         if ($user = resolve(UserRepositoryInterface::class)->findByEmail($recordVerifiedRegister['email'])) {
             Auth::loginUsingId($user->id);
             return session()->put('step4_status', ACTIVE_ERROR_USER_ACHIEVED);

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
 use App\Repositories\VerifiedRegister\VerifiedRegisterRepositoryInterface;
-use App\User;
+use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -61,21 +61,6 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-    }
-
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
         ]);
     }
 
@@ -190,7 +175,7 @@ class RegisterController extends Controller
      */
     public function verifiedRegister($verifiedToken)
     {
-        $this->verifiedRegisterRepository->verifiedUser($verifiedToken);
+//        $this->verifiedRegisterRepository->verifiedUser($verifiedToken);
         session()->put('step', FLAG_FOUR);
         return redirect()->route(REGISTER_SHOW_SCREEN_4);
     }
@@ -202,9 +187,6 @@ class RegisterController extends Controller
      */
     public function showScreen4()
     {
-        if (!session()->exists('step4_status')) {
-            return $this->checkStepAndRedirect(FLAG_FOUR);
-        }
         $statusStep4 = session()->get('step4_status');
         if ($statusStep4 == ACTIVE_FAIL || $statusStep4 == ACTIVE_ERROR_EXPIRY_TIME) {
             session()->put('step', FLAG_THREE);

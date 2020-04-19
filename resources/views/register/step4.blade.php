@@ -11,7 +11,7 @@
         @if($step4Status == ACTIVE_SUCCESS)
             <h5 class="text-center">{{ trans('attributes.register.title_step4') }}</h5>
         @elseif($step4Status == ACTIVE_ERROR_USER_ACHIEVED)
-            <h5 class="text-center">{{ trans('messages.authentication_done') }}</h5>
+            <h5 class="text-center">{{ trans('attributes.register.messages.authentication_done') }}</h5>
         @endif
         <div class="progress-register">
             <div class="row form-group div-block w-100-sp">

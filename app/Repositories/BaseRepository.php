@@ -8,16 +8,6 @@ use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Collection as Collect;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-/**
- * Class BaseRepository.
- *
- * @category  Repositories
- * @package   App\Repositorys
- * @author    Pham Trung Thuan <thuanpt@deha-soft.com>
- * @copyright 2019 CYARea!
- * @license   https://opensource.org/licenses/mit-license.php MIT License
- * @link      https://laravel.com Laravel(tm) Project
- */
 abstract class BaseRepository implements RepositoryInterface
 {
     /**
