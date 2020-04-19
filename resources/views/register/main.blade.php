@@ -1,4 +1,4 @@
-@extends('layout/base/base')
+@extends('layout.base.base')
 @section('content')
     <div class="main-header text-center">
         <h1 class="text-header fw-bold m15l m70t">{{ trans('attributes.main_register.title') }}</h1>

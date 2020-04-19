@@ -54,6 +54,27 @@ return [
         ],
         'step2' => [
             'btn_back' => 'Quay lại',
+        ],
+        'step4' => [
+            "using_service" => "Tiếp theo, hãy nhập thông tin để sử dụng dịch vụ.",
+            "button_registration_screen" => "Nhập hồ sơ thành viên",
+            'display_progress_registration' => 'Cảm ơn bạn đã sử dụng hệ thống'
+        ],
+        'messages' => [
+            'verified_mail' => 'Mail đã được gửi',
+            'send_fail' => 'Gửi mail thất bại',
+            'authentication_1' => 'Có 1 mail đã được gửi đến email bên dưới',
+            'authentication_2' => 'Hãy vào mail và click vào URL để hoàn tất khâu đăng ký',
+            'active_fail_1' => 'Đã xảy ra lỗi khi xử lý hệ thống.',
+            'active_fail_2' => 'Vui lòng đợi một lúc và thử lại.',
+            'authentication_done' => 'Địa chỉ email này đã được xác thực.',
+            'expiry_time_1' => 'URL xác thực đã hết hạn.',
+            'expiry_time_2' => 'Vui lòng nhập lại thông tin thành viên của bạn.',
+        ],
+        'footer' => [
+            'title' => 'Nếu bạn không nhận được email',
+            'des_1' => '* Nếu bạn sử dụng địa chỉ email miễn phí, nó có thể được sắp xếp vào thư mục thư rác hoặc thùng rác.',
+            'des_2' => '* Vui lòng kiểm tra.'
         ]
     ],
 ];

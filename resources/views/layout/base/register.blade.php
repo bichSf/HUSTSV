@@ -1,4 +1,4 @@
-@extends('layout/base.base')
+@extends('layout.base.base')
 @section('styles')
     @yield('style-step')
 @endsection
@@ -40,4 +40,7 @@
             @yield('content-step')
         </div>
     </div>
+@endsection
+@section('js')
+    <script src="{{ asset('js/custom/register_main.js') }}"></script>
 @endsection

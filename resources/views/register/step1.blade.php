@@ -14,7 +14,8 @@
                     <input type="hidden" name="role" value="{{ LEADER }}">
                     <div class="form-group">
                         <label class="fs12-sp" for="email-register">{{__('attributes.register.email')}}  <span class="text-red">*</span></label>
-                        <input type="email" class="form-control input-register fs14-sp" name="email" id="email-register" placeholder="Email" value="">
+                        <input type="email" class="form-control input-register fs14-sp" name="email" id="email-register" placeholder="Email"
+                               value="@if(session()->exists('data_register')) {{ session()->get('data_register')['email'] }}@endif">
                         <span class="text-red span-error-register" id="error-register-email"></span>
                     </div>
                     <div class="form-group">
@@ -22,7 +23,7 @@
                                for="password-register">{{__('attributes.register.password')}} <span
                                     class="text-red">*</span> {{__('attributes.register.step1.explain_password')}}</label>
                         <input type="password" class="form-control input-register fs14-sp" name="password" id="password-register" placeholder="Password"
-                               value="">
+                               value="@if(session()->exists('data_register')) {{ session()->get('data_register')['password'] }}@endif">
                         <span class="text-red span-error-register" id="error-register-password"></span>
                     </div>
                     <div class="form-check">
@@ -30,7 +31,7 @@
                         <label class="form-check-label pointer fs14-sp" id="label-show-pass">{{__('attributes.register.step1.label_checkbox_pwd')}}</label>
                     </div>
                     <div class="margin-auto text-center">
-                        <button type="submit" class="btn border-0 btn-success btn-submit btn-submit-register fs16-sp" >{{__('attributes.main_register.btn_register')}}</button>
+                        <button type="button" class="btn border-0 btn-success btn-submit btn-submit-register fs16-sp" >{{__('attributes.main_register.btn_register')}}</button>
                     </div>
                 </form>
             </div>

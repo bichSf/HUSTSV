@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RegisterRequest;
+use App\Repositories\VerifiedRegister\VerifiedRegisterRepositoryInterface;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
@@ -33,13 +34,19 @@ class RegisterController extends Controller
     protected $redirectTo = '/home';
 
     /**
-     * Create a new controller instance.
-     *
-     * @return void
+     * @var VerifiedRegisterRepositoryInterface || App/Repositories/VerifiedRegister/VerifiedRegisterEloquentRepository
      */
-    public function __construct()
+    private $verifiedRegisterRepository;
+
+    /**
+     * RegisterController constructor.
+     * @param VerifiedRegisterRepositoryInterface $verifiedRegisterRepository
+     *
+     */
+    public function __construct(VerifiedRegisterRepositoryInterface $verifiedRegisterRepository)
     {
-        $this->middleware('guest');
+        $this->middleware('guest', ['except' => ['verifiedRegister', 'completeRegistration']]);
+        $this->verifiedRegisterRepository = $verifiedRegisterRepository;
     }
 
     /**
@@ -72,48 +79,158 @@ class RegisterController extends Controller
         ]);
     }
 
+    /**
+     * Show Screen Register
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function showScreenRegister()
     {
         $this->removeSession();
         return view('register.main');
     }
 
+    /**
+     * Remove Old Session
+     */
     public function removeSession()
     {
         if(session()->exists('step')) {
             session()->remove('step');
         }
-        redirect(route(REGISTER_SHOW_SCREEN_1));
+        if(session()->exists('data_register')) {
+            session()->remove('data_register');
+        }
+        if(session()->exists('step4_status')) {
+            session()->remove('step4_status');
+        }
     }
 
+    /**
+     * Set Data Screen Step1
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function setDataScreenStep1()
     {
         session()->put('step', FLAG_ONE);
-
+        return redirect()->route(REGISTER_SHOW_SCREEN_1);
     }
 
-    public function setDataScreenStep2(Request $request)
-    {
-        $data = $request->all();
-        session()->put('step', FLAG_TWO);
-        return view('register.step2')->with([
-            'email' => $data['email'],
-            'pwd' => $data['password']
-        ]);
-    }
-
-    public function setDataScreenStep3(Request $request)
-    {
-        $data =$request->all();
-        session()->put('step', FLAG_THREE);
-        return view('register.step3')->with([
-            'email' => $data['email'],
-            'pwd' => $data['pwd']
-        ]);
-    }
-
+    /**
+     * Show Screen1
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|void
+     */
     public function showScreen1()
     {
-        return view('register.step1');
+        return $this->checkStepAndRedirect(FLAG_ONE);
+    }
+
+    public function validateInfo(RegisterRequest $request) {
+        return response()->json(['data' => $request->all()]);
+    }
+
+    /**
+     * Set Data Screen Step2
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function setDataScreenStep2(Request $request)
+    {
+        session()->put('data_register', [
+            'role' => LEADER,
+            'email' => $request->email,
+            'password' => $request->password,
+        ]);
+        session()->put('step', FLAG_TWO);
+        return redirect()->route(REGISTER_SHOW_SCREEN_2);
+    }
+
+    /**
+     * Show Screen2
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|void
+     */
+    public function showScreen2()
+    {
+        return $this->checkStepAndRedirect(FLAG_TWO);
+    }
+
+    /**
+     * Function send mail
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function sendMail(Request $request)
+    {
+        $this->verifiedRegisterRepository
+            ->addRecordIntoVerifiedRegisterTable(session()->get('data_register'));
+        session()->put('step', FLAG_THREE);
+        return redirect()->route(REGISTER_SHOW_SCREEN_3);
+    }
+
+    /**
+     * Show Screen3
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|void
+     */
+    public function showScreen3()
+    {
+        return $this->checkStepAndRedirect(FLAG_THREE);
+    }
+
+    /**
+     * Verified Register
+     *
+     * @param $verifiedToken
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function verifiedRegister($verifiedToken)
+    {
+        $this->verifiedRegisterRepository->verifiedUser($verifiedToken);
+        session()->put('step', FLAG_FOUR);
+        return redirect()->route(REGISTER_SHOW_SCREEN_4);
+    }
+
+    /**
+     * Show Screen4
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|void
+     */
+    public function showScreen4()
+    {
+        if (!session()->exists('step4_status')) {
+            return $this->checkStepAndRedirect(FLAG_FOUR);
+        }
+        $statusStep4 = session()->get('step4_status');
+        if ($statusStep4 == ACTIVE_FAIL || $statusStep4 == ACTIVE_ERROR_EXPIRY_TIME) {
+            session()->put('step', FLAG_THREE);
+            return redirect()->route(REGISTER_SHOW_SCREEN_3);
+        }
+        return $this->checkStepAndRedirect(FLAG_FOUR);
+    }
+
+    /**
+     * Check Step And Redirect
+     *
+     * @param $step
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View|void
+     */
+    public function checkStepAndRedirect($step) {
+        if (!session()->exists('step')) {
+            return abort(404);
+        }
+        $stepSession = session()->get('step');
+        if ($step == $stepSession) {
+            return view('register.step' .$step);
+        }
+        if ($step == FLAG_ONE && $stepSession == FLAG_TWO) {
+            session()->put('step', FLAG_ONE);
+            return view('register.step' .$step);
+        }
+        return view('register.step' .$stepSession);
     }
 }

@@ -11,6 +11,9 @@
 .fs14 {
     font-size: 14px !important; }
 
+.fs16 {
+    font-size: 16px !important; }
+
 .fs43 {
     font-size: 43px !important; }
 
@@ -130,6 +133,10 @@
 body {
     overflow-x: hidden;
     font-size: 14px !important;
+}
+
+.input-error {
+    border: 1px solid #CC0909;
 }
 
 .bg-black {

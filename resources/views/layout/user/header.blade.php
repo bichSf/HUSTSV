@@ -18,8 +18,7 @@
                                         <form action="search.php" method="get" class="flex align-items-stretch">
                                             <input name="search" type="search" placeholder="{{ trans('attributes.index.search') }}">
                                             <button type="button" name="search" class="flex justify-content-center align-items-center bg-red pointer w40">
-                                                {{--                                    <i class="fa fa-search"></i>--}}
-                                                {{--                                    <i class="fa-sort-icon fa fa-caret-down" aria-hidden="true"></i>--}}
+                                                <i class="fa fa-search text-white"></i>
                                             </button>
                                         </form>
                                     </div>
@@ -28,7 +27,7 @@
                                     <div class="header-bar-menu">
                                         <div class="flex justify-content-center align-items-center p0 m30l">
                                             <button type="button" class="btn btn-light border-0 btn-register bg-white pointer fs14 fs13-sp">
-                                                <a href="{{ route(REGISTER_SHOW_SCREEN_REGISTER) }}">{{ trans('attributes.index.register') }}</a>
+                                                <a class="text-body" href="{{ route(REGISTER_SHOW_SCREEN_REGISTER) }}">{{ trans('attributes.index.register') }}</a>
                                             </button>
                                             <span>/</span>
                                             <button class="btn btn-light border-0 btn-login bg-white pointer fs14 fs13-sp" type="button">{{ trans('attributes.index.login') }}</button>

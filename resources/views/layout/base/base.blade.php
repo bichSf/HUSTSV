@@ -20,12 +20,12 @@
     <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
     @yield('script-files')
 </head>
-@include('layout/base/header')
+@include('layout.base.header')
 <body>
 <div id="wrapper">
     @yield('content')
 </div>
 </body>
-@include('layout/base/footer')
+@include('layout.base.footer')
 @yield('js')
 </html>
