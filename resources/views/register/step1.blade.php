@@ -19,9 +19,9 @@
                         <span class="text-red span-error-register" id="error-register-email"></span>
                     </div>
                     <div class="form-group">
-                        <label class="fs12-sp"
-                               for="password-register">{{__('attributes.register.password')}} <span
-                                    class="text-red">*</span> {{__('attributes.register.step1.explain_password')}}</label>
+                        <label class="fs12-sp" for="password-register">{{__('attributes.register.password')}}
+                            <span class="text-red">*</span> {{__('attributes.register.step1.explain_password')}}
+                        </label>
                         <input type="password" class="form-control input-register fs14-sp" name="password" id="password-register" placeholder="Password"
                                value="@if(session()->exists('data_register')) {{ session()->get('data_register')['password'] }}@endif">
                         <span class="text-red span-error-register" id="error-register-password"></span>

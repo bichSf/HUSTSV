@@ -1,0 +1,125 @@
+.input-search {
+  width: 94% !important;
+}
+
+.main-sidebar-left .input-search {
+  border-radius: 40px;
+}
+
+input.input-search:focus {
+  box-shadow: none;
+}
+
+.nav-menu {
+  margin-top: 30px;
+}
+
+.main-sidebar-left {
+  float: left;
+  width: 200px !important;
+  background: #d8d8d7 !important;
+  border-right: 1px solid #DDDDDD;
+  min-height: 100vh;
+  transition: none !important;
+  position: absolute;
+  left: 0;
+  height: 100%;
+}
+
+.main-sidebar-left.active-sidebar {
+  background: white !important;
+  margin-left: 0 !important;
+}
+
+.nav-link-item.active-item {
+  border-radius: 0 8px 8px 0 !important;
+  background-color: #F5F5F5 !important;
+  margin-right: 15px;
+}
+
+.nl-one-item.active-one-item {
+  border-radius: 0 8px 8px 0 !important;
+  background-color: #0E7AFF !important;
+  color: white !important;
+  margin-right: 15px;
+  line-height: 32px;
+}
+
+.nl-one-item.active-one-item i {
+  color: white !important;
+}
+
+.nl-one-item.active-one-item span{
+  color: white !important;
+}
+
+.nav-link-sub-item.active-sub-item span {
+  color: #0e7aff !important;
+}
+
+a.nav-link.nav-link-sub-item {
+  padding-left: 100px;
+}
+
+.nl-one-item {
+  padding-left: 20px !important;
+}
+
+.icon-menu-home {
+  padding: 10px;
+}
+
+.nav-link-item {
+  height: 48px;
+}
+
+#fa-menu {
+  font-size: 25px;
+}
+
+.fa-1p5x {
+  color: slategrey;
+  font-size: 1.2em !important;
+}
+
+@media (max-width: 450px) {
+  .main-sidebar-left {
+    min-height: 100%;
+    height: auto;
+  }
+
+  #wrapper-master{
+    padding: 0 !important;
+  }
+}
+@media (max-width: 767px) {
+  .main-sidebar-left {
+    width: 100% !important;
+    display: none;
+  }
+
+  #wrapper-master{
+    padding: 0 !important;
+  }
+
+  .form-search {
+    height: 48px;
+    border-radius: 40px;
+    border: 1px solid #bcc0c9;
+    margin: 15px !important;
+    padding-left: 20px;
+  }
+
+  .input-search::placeholder {
+    color: darkgray !important;
+    opacity: 1; /* Firefox */
+  }
+
+  .input-search:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: darkgray !important;
+  }
+
+  .input-search::-ms-input-placeholder { /* Microsoft Edge */
+    color: darkgray !important;
+  }
+}

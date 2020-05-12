@@ -44,10 +44,10 @@
     <div class="col-3 col-lg-9 flex menu-bottom">
         <nav class="site-navigation flex">
             <ul class="flex flex-column flex-lg-row justify-content-lg-end align-content-center">
-                <li id="menu-item-index"><a class="menu-item menu-item-active" href="index.blade.php">{{ trans('attributes.index.menu.home') }}</a></li>
-                <li id="menu-item-team"><a class="menu-item" href="doiTN.php">{{ trans('attributes.index.menu.volunteer_team') }}</a></li>
-                <li id="menu-item-school"><a class="menu-item" href="khoaVien.php">{{ trans('attributes.index.menu.academy') }}</a></li>
-                <li id="menu-item-contact"><a class="menu-item" href="contact.php">{{ trans('attributes.index.menu.contact') }}</a></li>
+                <li id="menu-item-top"><a class="menu-item menu-item-active" href="{{ route(USER_HOME) }}">{{ trans('attributes.index.menu.home') }}</a></li>
+                <li id="menu-item-team"><a class="menu-item" href="{{ route(USER_TEAM) }}">{{ trans('attributes.index.menu.volunteer_team') }}</a></li>
+                <li id="menu-item-faculties"><a class="menu-item" href="{{ route(USER_FACULTIES) }}">{{ trans('attributes.index.menu.academy') }}</a></li>
+                <li id="menu-item-contact"><a class="menu-item" href="{{ route(USER_CONTACT) }}">{{ trans('attributes.index.menu.contact') }}</a></li>
             </ul>
         </nav>
     </div>

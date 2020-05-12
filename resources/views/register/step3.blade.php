@@ -11,13 +11,9 @@
             <div class="form-process col-sm-12 col-lg-8">
                 <div class="row process-content active text-center">
                     @php($step4Status = session()->get('step4_status'))
-                    @if($step4Status == ACTIVE_FAIL)
+                    @if($step4Status == ACTIVE_FAIL || $step4Status == ACTIVE_ERROR_EXPIRY_TIME)
                         <h5 class="text-red text-center fs20">{{ trans('attributes.register.messages.active_fail_1') }}</h5>
                         <h5 class="text-red text-center fs20">{{ trans('attributes.register.messages.active_fail_2') }}</h5>
-                    @endif
-                    @if($step4Status == ACTIVE_ERROR_EXPIRY_TIME)
-                        <h5 class="text-red text-center fs20">{{ trans('attributes.register.messages.expiry_time_1') }}</h5>
-                        <h5 class="text-red text-center fs20">{{ trans('attributes.register.messages.expiry_time_2') }}</h5>
                     @endif
                     <div class="form-group div-block">
                         <div>{{ session()->get('data_register')['email'] }}</div>

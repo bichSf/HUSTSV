@@ -1,4 +1,4 @@
-<footer class="site-footer bg-dark-gray">
+<footer class="site-footer bg-dark-gray m70t">
     <div class="footer-widgets p20b p20t fs14 d-none d-sm-block">
         <div class="container">
             <div class="row m10b">

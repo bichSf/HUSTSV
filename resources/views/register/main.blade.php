@@ -22,17 +22,13 @@
                         </div>
                         <div class="row">
                             <i class="fa fa-stop font_awesome-stop col-1"></i>
-                            <p class="col-10 fs14 p10l">{{ trans('attributes.main_register.card_user.description_2') }}</p>
-                        </div>
-                        <div class="row">
-                            <i class="fa fa-stop font_awesome-stop col-1"></i>
-                            <p class="col-10 fs14 p10l">{{ trans('attributes.main_register.card_user.description_3') }}</p>
+                            <p class="col-10 fs14 p10l">Tìm hiểu, quan tâm các đội tình nguyện</p>
                         </div>
                     </div>
                     <div class="card-footer card-item-footer text-center border-bottom-radius border-0 p0t">
-                        <form action="" method="post">
+                        <form action="{{ route(REGISTER_SHOW_SCREEN_NORMAL) }}" method="post">
                             @csrf
-                            <input type="hidden" name="role" value="">
+                            <input type="hidden" name="role" value="{{ USER }}">
                             <button class="btn border-0 btn-success btn-send">
                                 <span class="fs16">{{ trans('attributes.main_register.btn_register') }}</span>
                             </button>
@@ -53,7 +49,11 @@
                         </div>
                         <div class="row">
                             <i class="fa fa-stop font_awesome-stop col-1"></i>
-                            <p class="col-10 fs14 p10l">{{ trans('attributes.main_register.card_leader.description_2') }}</p>
+                            <p class="col-10 fs14 p10l">Quản lý trang của đội một cách dễ dàng</p>
+                        </div>
+                        <div class="row">
+                            <i class="fa fa-stop font_awesome-stop col-1"></i>
+                            <p class="col-10 fs14 p10l">Đăng các bài viết</p>
                         </div>
                     </div>
                     <div class="card-footer card-item-footer text-center border-bottom-radius border-0 p0t">

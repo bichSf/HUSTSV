@@ -2,7 +2,11 @@
 /**
  * Define const for route name
  */
+const USER_TOP = 'user.top';
 const USER_HOME = 'user.home';
+const USER_TEAM = 'user.team';
+const USER_CONTACT = 'user.contact';
+const USER_FACULTIES = 'user.faculties';
 const REGISTER_SHOW_SCREEN_REGISTER = 'register.show_screen_register';
 const REGISTER_SET_DATA_SCREEN_STEP_1 = 'register.set_data_screen_step_1';
 const REGISTER_VALIDATE_REGISTER = 'register.validate_register';
@@ -13,6 +17,15 @@ const REGISTER_SHOW_SCREEN_1 = 'register.show_screen_1';
 const REGISTER_SHOW_SCREEN_2 = 'register.show_screen_2';
 const REGISTER_SHOW_SCREEN_3 = 'register.show_screen_3';
 const REGISTER_SHOW_SCREEN_4 = 'register.show_screen_4';
+const REGISTER_SHOW_SCREEN_NORMAL = 'register.show_screen_normal';
+const PROFILE_TEAM_CREATE = 'profile_team.create';
+const PROFILE_LEADER_STORE = 'profile.leader.store';
+const PROFILE_TEAM_STORE = 'profile.team.store';
+const LOGIN_USE_FACEBOOK = 'login.use_facebook';
+const LOGIN_USE_FACEBOOK_CALLBACK = 'login.use_facebook.callback';
+const LOGIN_USE_GOOGLE = 'login.use_google';
+const LOGIN_USE_GOOGLE_CALLBACK = 'login.use_google.callback';
+
 /**
  *  Define role value
  */
@@ -48,3 +61,9 @@ const FLAG_ONE = 1;
 const FLAG_TWO = 2;
 const FLAG_THREE = 3;
 const FLAG_FOUR = 4;
+
+const START_YEAR = 2000;
+const MAX_SIZE_AVATAR = 5242880; //5MB*1024*1024
+const EXTENSION_IMAGE = ['jpg','png','jpeg'];
+const THUMBNAIL_IMAGE_FIRST_NAME = 'thumbnail_';
+//const PASSWORD_DEFAULT = 12345678;

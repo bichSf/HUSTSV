@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="container container-register">
-        <div class="head">
+        <div class="head m30t">
             <form action="" id="form-data-role-email">
                 @csrf
                 <div class="form-group div-block-register-broker">

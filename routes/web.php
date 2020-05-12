@@ -11,9 +11,25 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layout.user.index');
+Route::get('/home', function () {
+    return view('layout.home.index');
 })->name(USER_HOME);
+
+Route::get('/team', function () {
+    return view('user.team');
+})->name(USER_TEAM);
+
+Route::get('/contact', function () {
+    return view('user.contact');
+})->name(USER_CONTACT);
+
+Route::get('/faculties', function () {
+    return view('user.faculties');
+})->name(USER_FACULTIES);
+
+Route::get('/', function () {
+    return view('layout.home.index');
+})->name(USER_TOP);
 
 Route::namespace('Auth')->group(function () {
     Route::prefix('register')->group(function () {
@@ -28,5 +44,24 @@ Route::namespace('Auth')->group(function () {
         Route::get('/authentication/{verifiedToken}',
             'RegisterController@verifiedRegister')->name(REGISTER_VERIFIED_REGISTER);
         Route::post('/validateInfo', 'RegisterController@validateInfo')->name(REGISTER_VALIDATE_REGISTER);
+        Route::post('/normal', 'RegisterController@showScreenNormal')->name(REGISTER_SHOW_SCREEN_NORMAL);
+    });
+    Route::get('/login/facebook', 'LoginController@redirectToProvider')->name(LOGIN_USE_FACEBOOK);
+    Route::get('/login/facebook/callback', 'LoginController@handleProviderCallback')->name(LOGIN_USE_FACEBOOK_CALLBACK);
+    Route::get('/login/google', 'LoginController@redirectToProviderGoogle')->name(LOGIN_USE_GOOGLE);
+    Route::get('/login/google/callback', 'LoginController@handleProviderCallbackGoogle')->name(LOGIN_USE_GOOGLE_CALLBACK);
+});
+
+Route::post('/register/normal/store', 'Backend\UserController@store');
+
+/*
+| Web Routes need to login
+*/
+Route::middleware(['auth'])->group(function () {
+    Route::namespace('Backend')->group(function () {
+        Route::get('/home', 'HomeController@index')->name(USER_HOME);
+        Route::get('/register/profile', 'TeamController@create')->name(PROFILE_TEAM_CREATE);
+        Route::post('/profile/leader/store', 'ProfileController@store')->name(PROFILE_LEADER_STORE);
+        Route::post('/profile/team/store', 'TeamController@store')->name(PROFILE_TEAM_STORE);
     });
 });

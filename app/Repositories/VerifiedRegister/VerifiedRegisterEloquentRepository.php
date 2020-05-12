@@ -2,6 +2,7 @@
 
 namespace App\Repositories\VerifiedRegister;
 
+use App\Mail\SendMailRegister;
 use App\Repositories\BaseRepository;
 use App\Models\VerifiedRegister;
 use App\Repositories\User\UserRepositoryInterface;
@@ -35,7 +36,7 @@ class VerifiedRegisterEloquentRepository extends BaseRepository implements Verif
             $checkEmail = $this->removeRecordExpiry($checkEmail);
             if ($checkEmail == null) {
                 $verifiedToken = $this->createVerifiedToken();
-                $this->sendMailVerified([
+                resolve(SendMailRegister::class)->sendMailVerified([
                     'email' => $data['email'],
                     'link_verified' => $this->createLinkVerifiedRegister($verifiedToken)
                 ]);
@@ -70,19 +71,6 @@ class VerifiedRegisterEloquentRepository extends BaseRepository implements Verif
             return null;
         }
         return $record;
-    }
-
-    /**
-     * Send mail verified
-     *
-     * @param array $infoSendMail
-     */
-    public function sendMailVerified(array $infoSendMail)
-    {
-        Mail::send('register/form_mail', ['link' => $infoSendMail['link_verified']], function ($message) use ($infoSendMail) {
-            $message->from('tranbichbk@gmail.com', 'HUSTSV');
-            $message->to($infoSendMail['email'], 'HUSTSV')->subject(trans('mail_attributes.mail_register.title'));
-        });
     }
 
     /**
@@ -121,7 +109,6 @@ class VerifiedRegisterEloquentRepository extends BaseRepository implements Verif
         if ($this->checkExpiryTimeActive($recordVerifiedRegister['expiry_time'])) {
             return session()->put('step4_status', $this->registerUser($recordVerifiedRegister));
         }
-        session()->put('email_expiry', $recordVerifiedRegister['email']);
         return session()->put('step4_status', ACTIVE_ERROR_EXPIRY_TIME);
     }
 

@@ -156,6 +156,72 @@
   padding: 4px 12px !important;
 }
 
+.btn-register-information {
+  font-size: 16px;
+  padding: 18px 36px;
+  border-radius: 8px;
+  margin: 2% auto 2%;
+}
+
+.card-info-leader,
+.card-info-team {
+  border: 1px solid green;
+}
+
+.essential-icon-img {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+}
+
+.block-img {
+  width: 100%;
+  height: 115px;
+  border: 2px dashed #cccccc;
+  background-color: #eff2f4;
+}
+
+.avatar {
+  width: 100px !important;
+  height: 100px !important;
+  padding: 0;
+  border: dashed 2px #CCCCCC;
+  display: -webkit-box;
+  display: flex;
+  color: #6E7A94;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.input-hidden {
+  display: none;
+}
+
+.btn-register-social{
+  width: 165px;
+  display: inline-flex;
+  justify-content: center;
+  justify-items: center;
+  padding: 2px 0;
+}
+
+.form-register-normal a {
+  text-decoration: none;
+}
+
+.img-view-custom {
+  max-width: 100px;
+  max-height: 100px;
+}
+
 @media (max-width: 992px) {
   .process .head-process, .process .progress {
     width: 100%;

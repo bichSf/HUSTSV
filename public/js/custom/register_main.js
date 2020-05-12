@@ -21,6 +21,39 @@ var Register = (function () {
 
         submitAjax.fail(function (error) {
             if (error && error.status == 422) {
+                $('.btn-submit-register').attr("disabled", false);
+                if (error.responseJSON) {
+                    jQuery.each(error.responseJSON.errors, function (key, val) {
+                        $('#error-register-' + key).html(val);
+                        $('#' + key + '-register').addClass('input-error');
+                    });
+                }
+            }
+        });
+    }
+
+    modules.saveUser = function () {
+        modules.resetError();
+        let data = new FormData($('#register-normal')[0]);
+        let submitAjax = $.ajax({
+            type: 'POST',
+            url: '/register/normal/store',
+            data: data,
+            processData: false,
+            contentType: false
+        });
+
+        submitAjax.done(function (response) {
+            if (response && response.data) {
+                modules.resetError();
+                modules.resetAfterSuccess();
+                window.location.href = '/home'
+            }
+        });
+
+        submitAjax.fail(function (error) {
+            if (error && error.status == 422) {
+                $('.btn-register-info-normal').attr("disabled", false);
                 if (error.responseJSON) {
                     jQuery.each(error.responseJSON.errors, function (key, val) {
                         $('#error-register-' + key).html(val);
@@ -59,6 +92,13 @@ $(document).ready(function () {
     });
 
     $('.btn-submit-register').on('click', function () {
+        $(this).attr("disabled", true);
         Register.validateInfo();
+    })
+
+
+    $('.btn-register-info-normal').on('click', function () {
+        $(this).attr("disabled", true);
+        Register.saveUser();
     })
 })
