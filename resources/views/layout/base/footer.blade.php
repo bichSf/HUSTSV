@@ -1,4 +1,4 @@
-<footer id="footer" class="p25l">
+<footer id="footer" class="p25l m70t">
     <div class="row m0">
         <div class="d-none d-sm-block col-md-9 text-center text-body text-md-left fw-bold">
             {{ trans('attributes.index.copyright') }} &copy; <script>document.write(new Date().getFullYear());</script> {{ trans('attributes.index.copy_right') }} by {{ trans('attributes.common.school') }}

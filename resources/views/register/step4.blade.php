@@ -14,7 +14,7 @@
             <h5 class="text-center">{{ trans('attributes.register.messages.authentication_done') }}</h5>
         @endif
         <div class="progress-register">
-            <div class="row form-group div-block w-100-sp">
+            <div class="row form-group div-block">
                 <div class="text-center col-12">
                     <div class="step4-progress-registration fs16">
                         {{ trans('attributes.register.step4.display_progress_registration') }}
@@ -25,7 +25,7 @@
         <div class="text-center step4-using-service fs14-sp">{{ trans('attributes.register.step4.using_service') }}</div>
         <div class="text-center">
             <a href="{{ route(PROFILE_TEAM_CREATE) }}">
-                <button class="text-center btn border-0 btn-success w-100-sp m70t m70b btn-register-information">{{ trans('attributes.register.step4.button_registration_screen') }}</button>
+                <button class="text-center btn border-0 btn-success m70t m70b btn-register-information">{{ trans('attributes.register.step4.button_registration_screen') }}</button>
             </a>
         </div>
     </div>

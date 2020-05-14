@@ -394,25 +394,14 @@ abstract class BaseRepository implements RepositoryInterface
     }
 
     /**
-     * Generates pagination of items in an array or collection.
+     * Update or Create an entity in repository
      *
-     * @param Collection|Collect $items   Items
-     * @param int                $perPage Per page
-     * @param int                $page    Number page
-     *
-     * @return LengthAwarePaginator
+     * @param array $attributes
+     * @param array $values
+     * @return mixed
      */
-    public function generatesPaginate($items, $perPage = 10, $page = null)
+    public function updateOrCreate(array $attributes, array $values = [])
     {
-        $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
-        $items = $items instanceof Collection ? $items : Collect::make($items);
-
-        return new LengthAwarePaginator(
-            $items->forPage($page, $perPage), $items->count(), $perPage, $page,
-            [
-                'path' => Paginator::resolveCurrentPath(),
-                'pageName' => 'page',
-            ]
-        );
+        return $this->model->updateOrCreate($attributes, $values);
     }
 }

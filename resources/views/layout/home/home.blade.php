@@ -16,14 +16,6 @@
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    {{--    <script src="{{ asset('js/datepicker.min.js') }}"></script>--}}
-    {{--    <script src="{{ asset('js/cleave.js') }}"></script>--}}
-    {{--    <script src="{{ asset('js/common/common.js') }}"></script>--}}
-    {{--    <script src="{{ asset('js/highcharts/highstock.js')}}"></script>--}}
-    {{--    <script src="{{ asset('js/highcharts/highcharts-more.js')}}"></script>--}}
-    {{--    <script src="{{ asset('js/common/excelFormulas.js') }}"></script>--}}
-    {{--    <script src="{{ asset('js/common/highcharts.js') }}"></script>--}}
-    {{--    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>--}}
     @yield('script-files')
 </head>
 @include('layout.base.header')

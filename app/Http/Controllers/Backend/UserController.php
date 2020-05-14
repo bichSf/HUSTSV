@@ -31,16 +31,17 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(RegisterRequest $request)
-    {
-        $user = $this->userRepository->create([
-            'email' => $request->email,
-            'password' => password_hash($request->password, PASSWORD_BCRYPT),
-            'role' => USER,
-            'status' => FLAG_ONE,
-        ]);
-        if ($user) {
-            Auth::login($user);
-        }
-    }
+//    public function store(RegisterRequest $request)
+//    {
+//        $user = $this->userRepository->create([
+//            'email' => $request->email,
+//            'password' => password_hash($request->password, PASSWORD_BCRYPT),
+//            'role' => USER,
+//            'status' => FLAG_ONE,
+//        ]);
+//        if ($user) {
+//            Auth::login($user);
+//            return response()->json(['save' => true]);
+//        }
+//    }
 }

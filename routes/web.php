@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/home', function () {
-    return view('layout.home.index');
-})->name(USER_HOME);
-
 Route::get('/team', function () {
     return view('user.team');
 })->name(USER_TEAM);
@@ -28,10 +24,13 @@ Route::get('/faculties', function () {
 })->name(USER_FACULTIES);
 
 Route::get('/', function () {
-    return view('layout.home.index');
+    return view('user.top');
 })->name(USER_TOP);
 
 Route::namespace('Auth')->group(function () {
+    Route::get('/home', function () {
+        return view('layout.home.index');
+    })->name(USER_HOME);
     Route::prefix('register')->group(function () {
         Route::get('/', 'RegisterController@showScreenRegister')->name(REGISTER_SHOW_SCREEN_REGISTER);
         Route::get('/step1', 'RegisterController@showScreen1')->name(REGISTER_SHOW_SCREEN_1);
@@ -45,15 +44,33 @@ Route::namespace('Auth')->group(function () {
             'RegisterController@verifiedRegister')->name(REGISTER_VERIFIED_REGISTER);
         Route::post('/validateInfo', 'RegisterController@validateInfo')->name(REGISTER_VALIDATE_REGISTER);
         Route::post('/normal', 'RegisterController@showScreenNormal')->name(REGISTER_SHOW_SCREEN_NORMAL);
+        Route::post('/normal/step2', 'RegisterController@showStep2Normal')->name(REGISTER_SHOW_SCREEN_NORMAL_STEP_2);
     });
-    Route::get('/login/facebook', 'LoginController@redirectToProvider')->name(LOGIN_USE_FACEBOOK);
-    Route::get('/login/facebook/callback', 'LoginController@handleProviderCallback')->name(LOGIN_USE_FACEBOOK_CALLBACK);
-    Route::get('/login/google', 'LoginController@redirectToProviderGoogle')->name(LOGIN_USE_GOOGLE);
-    Route::get('/login/google/callback', 'LoginController@handleProviderCallbackGoogle')->name(LOGIN_USE_GOOGLE_CALLBACK);
+    Route::prefix('login')->group(function () {
+        Route::get('/facebook', 'LoginController@redirectToProvider')->name(LOGIN_USE_FACEBOOK);
+        Route::get('/facebook/callback', 'LoginController@handleProviderCallback')->name(LOGIN_USE_FACEBOOK_CALLBACK);
+        Route::get('/google', 'LoginController@redirectToProviderGoogle')->name(LOGIN_USE_GOOGLE);
+        Route::get('/google/callback', 'LoginController@handleProviderCallbackGoogle')->name(LOGIN_USE_GOOGLE_CALLBACK);
+        Route::get('/', 'LoginController@index')->name(LOGIN_INDEX);
+        Route::post('/login', 'LoginController@login')->name(LOGIN);
+    });
+
+    Route::prefix('/pass-reminder')->group(function () {
+        Route::get('/', 'ResetPasswordController@index')->name(USER_RESET_PASSWORD_INDEX);
+        Route::post('/send-mail-reset-password',
+            'ResetPasswordController@sendMailResetPassword')->name(USER_RESET_PASSWORD_SEND_MAIL);
+        Route::get('/changepass/{token}',
+            'ResetPasswordController@showScreenConfirmPassword')->name(USER_RESET_PASSWORD_CONFIRM);
+        Route::post('/reset-password',
+            'ResetPasswordController@updateChangePassword')->name(USER_RESET_PASSWORD_UPDATE);
+    });
+
+    Route::get('/logout', 'LoginController@logout')->name(LOGOUT);
 });
 
-Route::post('/register/normal/store', 'Backend\UserController@store');
+Route::namespace('Backend')->group(function () {
 
+});
 /*
 | Web Routes need to login
 */

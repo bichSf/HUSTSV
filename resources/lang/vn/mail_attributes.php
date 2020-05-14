@@ -12,4 +12,10 @@ return [
             'line7' => 'Xin lưu ý rằng chúng tôi không thể trả lời ngay cả khi bạn trả lời.',
         ],
     ],
+    'reset_password' => [
+        'title' => 'Xác nhận quên mật khẩu',
+        'body' => [
+            'line2' => 'Bạn đã yêu cầu đăng ký tài khoản bằng email của bạn.',
+        ],
+    ],
 ];

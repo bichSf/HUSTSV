@@ -190,6 +190,7 @@ $(document).ready(function () {
     Profile.setEventSelectImageMap($imageAvatarTeam, $inputAvatarTeam);
 
     $('.btn-create-profile').on('click', function () {
+        $(this).attr("disabled", true);
         Profile.createProfileTeam();
         Profile.createProfileLeader();
     })

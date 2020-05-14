@@ -21,5 +21,5 @@
     </div>
 @endsection
 @section('js')
-    <script src="{{ asset('js/custom/home.js') }}"></script>
+    <script src="{{ asset('js/custom/top.js') }}"></script>
 @endsection

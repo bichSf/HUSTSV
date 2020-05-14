@@ -6,7 +6,8 @@
                     <img src="{{ asset('images/logo/HUSTSV.png') }}" alt="" class="logo-header">
                 </a>
             </div>
-            <div class="col-6 col-sm-9 p25r">
+            @if(auth()->user())
+                <div class="col-6 col-sm-9 p25r">
                 <div class="header-simulation-right hp100">
                     <div class="message-dropdown-menu dropdown m12t">
                         <a class="nav-link nav-link-mess bg-general" data-toggle="dropdown" href="#">
@@ -61,20 +62,21 @@
                                     <span class="name-user text-center text-body m10l fw-bold">bich</span>
                                 </a>
                                 <div class="dropdown-menu drop-down-for-user" style="box-shadow: 0 0.5rem 1rem rgba(0,0,0,.175);">
-                                    <a class="dropdown-item" href="">Đăng xuất</a>
+                                    <a class="dropdown-item" href="{{ route(LOGOUT) }}">Đăng xuất</a>
                                 </div>
                             </li>
                         </ul>
                     </nav>
 
-{{--                    <a class="header-simulation-left btn-bars display-center d-flex d-md-none d-lg-none" data-widget="pushmenu">--}}
-{{--                        <i class="fa fa-bars-custom" id="fa-menu">--}}
-{{--                            <img class="open-menu fa-bars-img fa-menu" src="http://113.190.232.99:8076/images/open_icon.png">--}}
-{{--                            <img class="close-menu fa-close-img fa-menu" src="http://113.190.232.99:8076/images/close_icon.png" style="display: none">--}}
-{{--                        </i>--}}
-{{--                    </a>--}}
+                    <a class="header-simulation-left btn-bars display-center d-flex d-md-none d-lg-none" data-widget="pushmenu">
+                        <i class="fa fa-bars-custom" id="fa-menu">
+                            <img class="open-menu fa-bars-img fa-menu" src="http://113.190.232.99:8076/images/open_icon.png">
+                            <img class="close-menu fa-close-img fa-menu" src="http://113.190.232.99:8076/images/close_icon.png" style="display: none">
+                        </i>
+                    </a>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </header>

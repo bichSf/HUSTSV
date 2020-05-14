@@ -54,7 +54,7 @@
         </div>
     @endif
 
-    <div class="receive-email head-process w-100-sp">
+    <div class="receive-email head-process">
         <hr>
         <div class="title-receive-email">{{ trans('attributes.register.footer.title') }}</div>
         <div class="message-receive-email text-justify ">

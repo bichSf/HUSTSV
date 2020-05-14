@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Repositories\ResetPassword\ResetPasswordRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
@@ -21,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(
             \App\Repositories\VerifiedRegister\VerifiedRegisterRepositoryInterface::class,
             \App\Repositories\VerifiedRegister\VerifiedRegisterEloquentRepository::class
+        );
+        $this->app->singleton(
+            \App\Repositories\ResetPassword\ResetPasswordRepositoryInterface::class,
+            \App\Repositories\ResetPassword\ResetPasswordEloquentRepository::class
         );
     }
 

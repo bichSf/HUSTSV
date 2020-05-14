@@ -215,8 +215,23 @@ class RegisterController extends Controller
         return view('register.step' . $stepSession);
     }
 
+    /**
+     * Show screen register normal
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function showScreenNormal()
     {
         return view('register.social');
+    }
+
+    /**
+     * Show screen register normal step 2
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function showStep2Normal()
+    {
+        return view('register.social_step2');
     }
 }

@@ -30,7 +30,9 @@
                                                 <a class="text-body" href="{{ route(REGISTER_SHOW_SCREEN_REGISTER) }}">{{ trans('attributes.index.register') }}</a>
                                             </button>
                                             <span>/</span>
-                                            <button class="btn btn-light border-0 btn-login bg-white pointer fs14 fs13-sp" type="button">{{ trans('attributes.index.login') }}</button>
+                                            <button type="button" class="btn btn-light border-0 btn-login bg-white pointer fs14 fs13-sp">
+                                                <a class="text-body" href="{{ route(LOGIN_INDEX) }}">{{ trans('attributes.index.login') }}</a>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -56,7 +58,4 @@
 <div class="d-block d-sm-none float-right">
     <i class="fa fa-bars" aria-hidden="true"></i>
 </div>
-{{--@include('user.modals.login_modal')--}}
-{{--<script src="{{asset('js/firebase_config.js')}}"></script>--}}
-{{--<script src="{{asset('js/login.js')}}"></script>--}}
 

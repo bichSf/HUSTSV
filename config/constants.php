@@ -18,6 +18,7 @@ const REGISTER_SHOW_SCREEN_2 = 'register.show_screen_2';
 const REGISTER_SHOW_SCREEN_3 = 'register.show_screen_3';
 const REGISTER_SHOW_SCREEN_4 = 'register.show_screen_4';
 const REGISTER_SHOW_SCREEN_NORMAL = 'register.show_screen_normal';
+const REGISTER_SHOW_SCREEN_NORMAL_STEP_2 = 'register.show_screen_normal_step2';
 const PROFILE_TEAM_CREATE = 'profile_team.create';
 const PROFILE_LEADER_STORE = 'profile.leader.store';
 const PROFILE_TEAM_STORE = 'profile.team.store';
@@ -25,7 +26,14 @@ const LOGIN_USE_FACEBOOK = 'login.use_facebook';
 const LOGIN_USE_FACEBOOK_CALLBACK = 'login.use_facebook.callback';
 const LOGIN_USE_GOOGLE = 'login.use_google';
 const LOGIN_USE_GOOGLE_CALLBACK = 'login.use_google.callback';
+const LOGIN = 'user.login';
+const LOGIN_INDEX = 'user.login.index';
+const LOGOUT = 'user.logout';
 
+const USER_RESET_PASSWORD_INDEX = 'user.reset_password.index';
+const USER_RESET_PASSWORD_SEND_MAIL = 'user.reset_password.send_mail';
+const USER_RESET_PASSWORD_CONFIRM = 'user.reset_password.confirm';
+const USER_RESET_PASSWORD_UPDATE = 'user.reset_password.update';
 /**
  *  Define role value
  */
@@ -67,3 +75,17 @@ const MAX_SIZE_AVATAR = 5242880; //5MB*1024*1024
 const EXTENSION_IMAGE = ['jpg','png','jpeg'];
 const THUMBNAIL_IMAGE_FIRST_NAME = 'thumbnail_';
 //const PASSWORD_DEFAULT = 12345678;
+
+/**
+ * Define flash
+ */
+const STR_FLASH_ERROR = 'error';
+const STR_FLASH_SUCCESS = 'success';
+const STR_ERROR_FLASH = 'error-flash';
+const STR_SUCCESS_FLASH = 'success-flash';
+
+/**
+ * Define number
+ */
+const FLAG_ZERO = 0;
+const FLAG_ONE = 1;
