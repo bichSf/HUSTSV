@@ -23,36 +23,21 @@
         </div>
 
         <div class="forgot-pw-step2" style="display: none">
-{{--            <form id="register-normal">--}}
-{{--                @csrf--}}
-{{--                <div class="row m0 m10t">--}}
-{{--                    <label class="offset-4 fs12-sp m5t" for="email-register">{{__('attributes.register.password')}}--}}
-{{--                        <span class="text-red">*</span> {{__('attributes.register.step1.explain_password')}}--}}
-{{--                    </label>--}}
-{{--                </div>--}}
-{{--                <div class="row m0 m10t">--}}
-{{--                    <input type="password" class="offset-4 col-5 form-control input-register fs14-sp" name="password"--}}
-{{--                           id="password-register" placeholder="Password">--}}
-{{--                    <span class="offset-4 col-5 p0l text-red span-error-register" id="error-register-password"></span>--}}
-{{--                </div>--}}
-{{--                <div class="row m0 m10t">--}}
-{{--                    <label class="offset-4 fs12-sp m5t" for="email-register">{{__('attributes.register.password')}} confirm--}}
-{{--                        <span class="text-red">*</span>--}}
-{{--                    </label>--}}
-{{--                </div>--}}
-{{--                <div class="row m0 m10t">--}}
-{{--                    <input type="password" class="offset-4 col-5 form-control input-register fs14-sp" name="password"--}}
-{{--                           id="password-register" placeholder="Password confirm">--}}
-{{--                    <span class="offset-4 col-5 p0l text-red span-error-register" id="error-register-password"></span>--}}
-{{--                </div>--}}
-{{--            </form>--}}
-            <div class="text-center">
-                <button class="btn border-0 btn-success p10t p10b m30t m30b btn-register-info-normal btn-register-social">
-                    Lấy lại mật khẩu
-                </button>
+            <div class="form-process col-sm-12 col-lg-8">
+                <div class="row process-content active text-center">
+                    <div class="content-auth-email w-95-sp">
+                        <span class="fs16-sp">{{ trans('attributes.register.messages.authentication_1') }}</span>
+                        <br>
+                        <span class="fs16-sp">{{ trans('attributes.register.messages.authentication_2') }}</span>
+                    </div>
+                    <div class="form-group div-block w-95-sp pd-5-sp">
+                        <div class="fs16-sp email-forgot-pass"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
     <div class="receive-email head-process m70t">
         <hr>
         <div class="title-receive-email">{{ trans('attributes.register.footer.title') }}</div>

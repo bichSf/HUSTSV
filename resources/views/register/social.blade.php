@@ -4,7 +4,7 @@
         <h1 class="text-center m70t">Đăng ký</h1>
         <div class="text-right m25t m30r m30b">
             <span class="">Bạn đã có tài khoản?</span>
-            <a class="color-green" href="">Đăng nhập</a>
+            <a class="color-green" href="{{ route(LOGIN_INDEX) }}">Đăng nhập</a>
         </div>
         <div>
             <form action="{{ route(REGISTER_SHOW_SCREEN_NORMAL_STEP_2) }}" method="post" id="form-register">

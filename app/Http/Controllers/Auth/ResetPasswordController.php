@@ -8,6 +8,7 @@ use App\Repositories\User\UserRepositoryInterface;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ResetPasswordController extends Controller
 {
@@ -87,7 +88,6 @@ class ResetPasswordController extends Controller
     {
         $request->validate($this->resetPassword->rules('email', $request->all()['email']),
             $this->resetPassword->validationErrorMessages());
-        dd($this->resetPassword->addRecordIntoPasswordResetTable($request->all()));
         if ($this->resetPassword->addRecordIntoPasswordResetTable($request->all())) {
             return response()->json(['status' => true, 'data' => $request->all()]);
         }
@@ -107,7 +107,7 @@ class ResetPasswordController extends Controller
             return abort('404');
         }
         if ($record->used != FLAG_ONE) {
-            return view('forgot_password.change-password', compact('token'));
+            return view('forgot_password.step2', compact('token'));
         }
         return redirect(route(USER_TOP));
     }

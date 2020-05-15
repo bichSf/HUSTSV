@@ -4,6 +4,7 @@ namespace App\Repositories\User;
 
 use App\Models\User;
 use App\Repositories\BaseRepository;
+use App\Repositories\ResetPassword\ResetPasswordRepositoryInterface;
 use App\Repositories\VerifiedRegister\VerifiedRegisterRepositoryInterface;
 use Illuminate\Support\Facades\Hash;
 
@@ -92,5 +93,32 @@ class UserEloquentRepository extends BaseRepository implements UserRepositoryInt
         return $this->model->where('id', $id)
             ->select('role')
             ->first();
+    }
+
+
+    /**
+     * Update password in users table and update uses in password_resets table
+     *
+     * @param array $data
+     * @return bool
+     */
+    public function updatePassword(array $data)
+    {
+        try {
+            $resetPassword = resolve(ResetPasswordRepositoryInterface::class)
+                ->findByAttribute('token', $data['token']);
+            if ($resetPassword->used == FLAG_ONE) {
+                return false;
+            }
+            $resetPassword->update(['used' => FLAG_ONE]);
+            $record = $this->findByEmail($resetPassword->email);
+            if ($record) {
+                $record->update(['password' => Hash::make($data['password'])]);
+            }
+            return true;
+        } catch (\Exception $exception) {
+            report($exception);
+            return false;
+        }
     }
 }

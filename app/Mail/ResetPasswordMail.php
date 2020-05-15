@@ -16,7 +16,8 @@ class ResetPasswordMail extends Mailable
     {
         Mail::send('forgot_password.form_mail', ['link' => $infoSendMail['link_reset_password']],
             function ($message) use ($infoSendMail) {
-                $message->to($infoSendMail['email'], 'HUSTSV!')->subject(trans('mail_attributes.reset_password.title'));
+                $message->from('tranbichbk@gmail.com', 'HUSTSV');
+                $message->to($infoSendMail['email'], 'HUSTSV')->subject(trans('mail_attributes.reset_password.title'));
             });
     }
 }
