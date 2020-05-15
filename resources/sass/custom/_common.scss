@@ -11,6 +11,9 @@
 .fs14 {
     font-size: 14px !important; }
 
+.fs16 {
+    font-size: 16px !important; }
+
 .fs43 {
     font-size: 43px !important; }
 
@@ -23,10 +26,22 @@
 
 .h80 {
     height: 80px; }
+
+.h245 {
+    height: 245px; }
+
+.hp100 {
+    height: 100% !important; }
+
+.h85vh {
+    min-height: 85vh !important;
+}
 //i
 //j
 //k
 //l
+.lh45 {
+    line-height: 45px !important; }
 //m
 .m0 {
     margin: 0 !important; }
@@ -40,6 +55,12 @@
 .m30b {
     margin-bottom: 30px !important; }
 
+.m70b {
+    margin-bottom: 70px !important; }
+
+.m10l {
+    margin-left: 10px !important; }
+
 .m15l {
     margin-left: 15px !important; }
 
@@ -52,8 +73,14 @@
 .m50l {
     margin-left: 50px !important; }
 
+.m5t {
+    margin-top: 5px !important; }
+
 .m10t {
     margin-top: 10px !important; }
+
+.m12t {
+    margin-top: 12px !important; }
 
 .m25t {
     margin-top: 25px !important; }
@@ -78,11 +105,17 @@
 .p0 {
     padding: 0 !important; }
 
+.p10b {
+    padding-bottom: 10px !important; }
+
 .p20b {
     padding-bottom: 20px !important; }
 
 .p25b {
     padding-bottom: 25px !important; }
+
+.p0l {
+    padding-left: 0 !important; }
 
 .p25l {
     padding-left: 25px !important; }
@@ -90,8 +123,14 @@
 .p45l {
     padding-left: 45px !important; }
 
+.p7dot5l {
+    padding-left: 7.5px !important; }
+
 .p0t {
     padding-top: 0 !important; }
+
+.p10t {
+    padding-top: 10px !important; }
 
 .p20t {
     padding-top: 20px !important; }
@@ -99,8 +138,14 @@
 .p25t {
     padding-top: 25px !important; }
 
+.p0r {
+    padding-right: 0 !important; }
+
 .p25r {
     padding-right: 25px !important; }
+
+.p7dot5r {
+    padding-right: 7.5px !important; }
 
 .p30r {
     padding-right: 30px !important; }
@@ -109,6 +154,9 @@
 //s
 //t
 //u
+.un-underline {
+    text-decoration: none !important;
+}
 //v
 //w
 .w36 {
@@ -122,6 +170,12 @@
 
 .w950 {
     width: 950px !important; }
+
+.wp70 {
+    width: 70% !important; }
+
+.wp100 {
+    width: 100% !important; }
 //x
 //w
 //z
@@ -130,6 +184,10 @@
 body {
     overflow-x: hidden;
     font-size: 14px !important;
+}
+
+.input-error {
+    border: 1px solid #CC0909;
 }
 
 .bg-black {
@@ -153,6 +211,9 @@ body {
 .color-green {
     color: #0D8D58 !important; }
 
+.error-message {
+    color: red; }
+
 @media (max-width: 576px) {
     .fs13-sp {
         font-size: 13px !important; }
@@ -171,4 +232,14 @@ body {
 
     .p25-sp {
         padding: 25px !important; }
+}
+
+input[type=checkbox], input[type=radio] {
+    width: 15px;
+    height: 15px;
+}
+
+a.btn:hover {
+    color: black;
+    background: white;
 }

@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\ResetPassword\ResetPasswordRepositoryInterface;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(
+            \App\Repositories\User\UserRepositoryInterface::class,
+            \App\Repositories\User\UserEloquentRepository::class
+        );
+        $this->app->singleton(
+            \App\Repositories\VerifiedRegister\VerifiedRegisterRepositoryInterface::class,
+            \App\Repositories\VerifiedRegister\VerifiedRegisterEloquentRepository::class
+        );
+        $this->app->singleton(
+            \App\Repositories\ResetPassword\ResetPasswordRepositoryInterface::class,
+            \App\Repositories\ResetPassword\ResetPasswordEloquentRepository::class
+        );
     }
 
     /**
@@ -23,6 +36,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('*', function ($view) {
+            $view->with('currentUser', Auth::check() ? Auth::user() : false);
+        });
     }
 }

@@ -1,5 +1,5 @@
 .hero-content-overlay {
-    position: absolute;
+    position: unset;
     width: 100%;
     top: 0;
     background-image: url('/images/background/volunteer-hands.jpg') !important;
@@ -21,12 +21,9 @@
 }
 
 .menu-bottom {
-    max-width: 50% !important;
-    margin-left: 65% !important;
-}
-
-.entry-content {
-    margin-top: 35%;
+    position: absolute;
+    top: 130px;
+    left: 60%;
 }
 
 .entry-header {
@@ -35,6 +32,10 @@
 
 .hero-content-wrap {
     height: 500px;
+}
+
+.content-wrapper {
+    min-height: 90vh;
 }
 
 @media (max-width: 576px) {

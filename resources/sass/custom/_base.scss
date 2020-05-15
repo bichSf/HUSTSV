@@ -6,7 +6,7 @@
 }
 
 .logo-header {
-  width: 285px;
+  width: 225px;
   height: 60px;
 }
 
@@ -23,6 +23,53 @@
 
 #footer a {
   text-decoration: underline;
+}
+
+.header-simulation-right {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  justify-items: center;
+}
+
+.badge-home {
+  font-size: 0.6rem;
+  font-weight: 300;
+  padding: 2px 4px;
+  position: absolute;
+  border-radius: 100%;
+  right: 5px;
+  top: 9px;
+}
+
+.badge-danger {
+  color: #fff;
+  background-color: #dc3545;
+}
+
+.img-user {
+  border-radius: 50%;
+  margin-left: 10px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 30px;
+  width: 30px;
+}
+
+.img-size-50 {
+  width: 50px;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.message-dropdown,
+.noti-dropdown {
+  max-width: 300px;
+  min-width: 280px;
+  padding: 0;
 }
 
 @media (max-width: 576px) {
