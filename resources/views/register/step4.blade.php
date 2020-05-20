@@ -24,7 +24,7 @@
         </div>
         <div class="text-center step4-using-service fs14-sp">{{ trans('attributes.register.step4.using_service') }}</div>
         <div class="text-center">
-            <a href="{{ route(PROFILE_TEAM_CREATE) }}">
+            <a href="{{ route(PROFILE_LEADER_CREATE) }}">
                 <button class="text-center btn border-0 btn-success m70t m70b btn-register-information">{{ trans('attributes.register.step4.button_registration_screen') }}</button>
             </a>
         </div>

@@ -22,7 +22,7 @@
 <body>
 <div id="wrapper-master">
     @include('layout.home.sidebar')
-    <div class="content-wrapper">
+    <div class="content-wrapper m200l">
         @yield('content')
     </div>
 </div>

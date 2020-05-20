@@ -28,7 +28,7 @@ class TeamRequest extends FormRequest
         return [
             'avatar_team' => [new AvatarValidateRule()],
             'name' => 'required',
-            'faculties' => 'required',
+            'id_faculties' => 'required',
             'history' => 'required',
         ];
     }

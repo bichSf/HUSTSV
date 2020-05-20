@@ -19,9 +19,14 @@ const REGISTER_SHOW_SCREEN_3 = 'register.show_screen_3';
 const REGISTER_SHOW_SCREEN_4 = 'register.show_screen_4';
 const REGISTER_SHOW_SCREEN_NORMAL = 'register.show_screen_normal';
 const REGISTER_SHOW_SCREEN_NORMAL_STEP_2 = 'register.show_screen_normal_step2';
+
 const PROFILE_TEAM_CREATE = 'profile_team.create';
+const PROFILE_LEADER_CREATE = 'profile_leader.create';
 const PROFILE_LEADER_STORE = 'profile.leader.store';
+const PROFILE_LEADER_EDIT = 'profile.leader.edit';
 const PROFILE_TEAM_STORE = 'profile.team.store';
+const PROFILE_TEAM_EDIT = 'profile.team.edit';
+
 const LOGIN_USE_FACEBOOK = 'login.use_facebook';
 const LOGIN_USE_FACEBOOK_CALLBACK = 'login.use_facebook.callback';
 const LOGIN_USE_GOOGLE = 'login.use_google';
@@ -89,3 +94,15 @@ const STR_SUCCESS_FLASH = 'success-flash';
  */
 const FLAG_ZERO = 0;
 const FLAG_ONE = 1;
+
+const REGISTER_LINK_REDIRECT = [
+    PROFILE_TEAM_CREATE, PROFILE_LEADER_CREATE
+];
+
+/**
+ * define path thumbnail house
+ */
+const PATH_SRC_AVATAR = 'storage/imagesProfileUser/';
+const FOLDER_NAME_SAVE_GENERAL_INFO = 'imagesGeneralInfo';
+const FOLDER_IMAGES_PROFILE = 'imagesProfileUser';
+const PATH_SRC_ARTICLE_PHOTO = 'storage/articlePhotos/';

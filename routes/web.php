@@ -76,9 +76,23 @@ Route::namespace('Backend')->group(function () {
 */
 Route::middleware(['auth'])->group(function () {
     Route::namespace('Backend')->group(function () {
-        Route::get('/home', 'HomeController@index')->name(USER_HOME);
-        Route::get('/register/profile', 'TeamController@create')->name(PROFILE_TEAM_CREATE);
-        Route::post('/profile/leader/store', 'ProfileController@store')->name(PROFILE_LEADER_STORE);
-        Route::post('/profile/team/store', 'TeamController@store')->name(PROFILE_TEAM_STORE);
+        Route::get('/register/profile', 'ProfileController@create')->name(PROFILE_LEADER_CREATE);
+        Route::prefix('/profile')->group(function () {
+            Route::prefix('/leader')->group(function () {
+                Route::post('/store', 'ProfileController@store')->name(PROFILE_LEADER_STORE);
+            });
+            Route::prefix('/team')->group(function () {
+                Route::post('/store', 'TeamController@store')->name(PROFILE_TEAM_STORE);
+            });
+        });
+    });
+
+    Route::middleware(['profile.user'])->group(function () {
+        Route::namespace('Backend')->group(function () {
+            Route::get('/home', 'HomeController@index')->name(USER_HOME);
+            Route::prefix('/profile')->group(function () {
+                Route::get('/edit/{id}', 'TeamController@edit')->name(PROFILE_TEAM_EDIT);
+            });
+        });
     });
 });

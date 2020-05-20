@@ -8,7 +8,7 @@ const TYPE_IMAGES_ALLOW = ['image/jpg', 'image/png', 'image/jpeg'];
 let Profile = (function () {
     let modules = {};
 
-    modules.createProfileTeam = function () {
+    modules.infoProfileTeam = function () {
         let dataTeam = new FormData($('#info-teams')[0]);
         dataTeam.append('_token', $('meta[name="csrf-token"]').attr('content'));
         let submitAjax = $.ajax({
@@ -20,23 +20,24 @@ let Profile = (function () {
         });
 
         submitAjax.done(function (res) {
-            // if (res.save == true) {
-            //     $('.forgot-pw-step3').css('display', 'none');
-            //     $('.forgot-pw-step4').css('display', 'block');
-            // } else {
-            //     alert('システムでの処理中にエラーが発生しました。\n' +
-            //         '時間を開けて再度お試しください。');
-            //     window.location.reload();
-            // }
+            if (res.save == true) {
+                window.location.href = '/home';
+            } else {
+                // alert('システムでの処理中にエラーが発生しました。\n' +
+                //     '時間を開けて再度お試しください。');
+                // window.location.reload();
+            }
         });
 
-        submitAjax.fail(function (error) {
-            // ResetPassword.clearErrorMessages();
-            // ResetPassword.showMessageValidate(error);
+        submitAjax.fail(function (response) {
+            $('.btn-create-profile-team').attr("disabled", false);
+            var messageList = response.responseJSON.errors;
+            modules.resetError();
+            modules.showMessageValidate(messageList);
         });
     };
 
-    modules.createProfileLeader = function () {
+    modules.infoProfileLeader = function () {
         let dataLeader = new FormData($('#info-leader')[0]);
         dataLeader.append('_token', $('meta[name="csrf-token"]').attr('content'));
         let submitAjax = $.ajax({
@@ -48,17 +49,18 @@ let Profile = (function () {
         });
 
         submitAjax.done(function (res) {
-            // if (res.save == true) {
-            //     $('.forgot-pw-step3').css('display', 'none');
-            //     $('.forgot-pw-step4').css('display', 'block');
-            // } else {
-            //     alert('システムでの処理中にエラーが発生しました。\n' +
-            //         '時間を開けて再度お試しください。');
-            //     window.location.reload();
-            // }
+            if (res.save == true) {
+                $('.info-leader').css('display', 'none');
+                $('.info-teams').css('display', 'block');
+            } else {
+                // alert('システムでの処理中にエラーが発生しました。\n' +
+                //     '時間を開けて再度お試しください。');
+                // window.location.reload();
+            }
         });
 
         submitAjax.fail(function (response) {
+            $('.btn-create-profile-leader').attr("disabled", false);
             var messageList = response.responseJSON.errors;
             modules.resetError();
             modules.showMessageValidate(messageList);
@@ -74,10 +76,13 @@ let Profile = (function () {
         $.each(messageList, function (key, value) {
             $('p.error-message[data-error=' + key + ']').text(value);
             $('input[name=' + key + ']').addClass('input-error');
-            $('select[name=' + key + ']').parent().addClass('input-error');
+            $('select[name=' + key + ']').addClass('input-error');
             $('textarea[name=' + key + ']').addClass('input-error');
             if (key == 'faculties' || key == 'class') {
                 $('.faculties').text(value);
+            }
+            if (key == 'start_tenure' || key == 'end_tenure') {
+                $('.tenure').text(value);
             }
         });
         $('html, body').animate({
@@ -189,9 +194,20 @@ $(document).ready(function () {
     Profile.setEventSelectImageMap($imageAvatarLeader, $inputAvatarLeader);
     Profile.setEventSelectImageMap($imageAvatarTeam, $inputAvatarTeam);
 
-    $('.btn-create-profile').on('click', function () {
+    $('.btn-create-profile-leader').on('click', function () {
         $(this).attr("disabled", true);
-        Profile.createProfileTeam();
-        Profile.createProfileLeader();
-    })
+        Profile.infoProfileLeader();
+    });
+
+    $('.btn-create-profile-team').on('click', function () {
+        $(this).attr("disabled", true);
+        Profile.infoProfileTeam();
+    });
+
+    $('.btn-edit-team').on('click', function () {
+        $(this).attr("disabled", true);
+        Profile.infoProfileTeam();
+        Profile.infoProfileLeader();
+    });
+
 })

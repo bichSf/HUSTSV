@@ -9,26 +9,32 @@
                            placeholder= 'Search'>
                 </div>
             </li>
-                <li class="nav-item menu-simulation-item">
-                    <a href="{{ route(USER_HOME) }}" class="nav-link nav-link-item nl-one-item active-one-item" data-id="home">
-                        <i class="fa fa-home fa-1p5x" aria-hidden="true"></i>
-                        <span class="text-body m10l">Trang chủ</span>
-                    </a>
-                </li>
-                <li class="nav-item menu-simulation-item">
-                    <a href="" class="nav-link nav-link-item nl-one-item nl-simulation" data-id="simulation">
-                        <i class="fa fa-user fa-1p5x" aria-hidden="true"></i>
-                        <span class="text-body m10l">Chỉnh sửa thông tin</span>
-                    </a>
-                </li>
             <li class="nav-item menu-simulation-item">
-                <a href="" class="nav-link nav-link-item nl-one-item nl-simulation" data-id="simulation">
+                <a href="{{ route(USER_HOME) }}" class="nav-link nav-link-item nl-one-item active-one-item" data-id="home">
+                    <i class="fa fa-home fa-1p5x" aria-hidden="true"></i>
+                    <span class="text-body m10l">Trang chủ</span>
+                </a>
+            </li>
+            <li class="nav-item menu-simulation-item">
+                <a href="" class="nav-link nav-link-item nl-one-item nl-simulation" >
+                    <i class="fa fa-user fa-1p5x" aria-hidden="true"></i>
+                    <span class="text-body m10l">Thông tin cá nhân</span>
+                </a>
+            </li>
+            <li class="nav-item menu-simulation-item">
+                <a href="{{ route(PROFILE_TEAM_EDIT, 2) }}" class="nav-link nav-link-item nl-one-item nl-simulation" >
+                    <i class="fa fa-user fa-1p5x" aria-hidden="true"></i>
+                    <span class="text-body m10l">Thông tin đội</span>
+                </a>
+            </li>
+            <li class="nav-item menu-simulation-item">
+                <a href="" class="nav-link nav-link-item nl-one-item nl-simulation" >
                     <i class="fa fa-list-ul fa-1p5x" aria-hidden="true"></i>
                     <span class="text-body m10l">Quản lý trang đội</span>
                 </a>
             </li>
             <li class="nav-item menu-simulation-item">
-                <a href="" class="nav-link nav-link-item nl-one-item nl-simulation" data-id="simulation">
+                <a href="" class="nav-link nav-link-item nl-one-item nl-simulation" >
                     <i class="fa fa-cog fa-1p5x" aria-hidden="true"></i>
                     <span class="text-body m10l">Cài đặt</span>
                 </a>

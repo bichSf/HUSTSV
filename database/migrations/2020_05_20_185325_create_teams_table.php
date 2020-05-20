@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVolunteerTeamsTable extends Migration
+class CreateTeamsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateVolunteerTeamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('volunteer_teams', function (Blueprint $table) {
+        Schema::create('teams', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('user_id')->unique();
             $table->string('name');
-            $table->string('faculties');
-            $table->longText('history');
+            $table->integer('id_faculties');
+            $table->string('history');
             $table->string('image_1')->nullable();
             $table->string('image_2')->nullable();
             $table->string('image_3')->nullable();
-            $table->longText('introduction')->nullable();
+            $table->string('introduction')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -35,6 +35,6 @@ class CreateVolunteerTeamsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('volunteer_teams');
+        Schema::dropIfExists('teams');
     }
 }

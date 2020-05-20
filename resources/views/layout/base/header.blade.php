@@ -2,7 +2,7 @@
     <div class="text-center text-md-left">
         <div class="row justify-content-between">
             <div class="col-6 col-sm-3">
-                <a href="{{ route(USER_TOP) }}">
+                <a href="{{ route(USER_HOME) }}">
                     <img src="{{ asset('images/logo/HUSTSV.png') }}" alt="" class="logo-header">
                 </a>
             </div>

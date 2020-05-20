@@ -5,28 +5,24 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\c;
 use App\Http\Requests\TeamRequest;
+use App\Repositories\Team\TeamRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TeamController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @var TeamRepositoryInterface
      */
-    public function index()
-    {
-
-    }
+    private $teamRepository;
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * TeamController constructor.
+     * @param TeamRepositoryInterface $teamRepository
      */
-    public function create()
+    public function __construct(TeamRepositoryInterface $teamRepository)
     {
-        return view('profile.teams.index');
+        $this->teamRepository = $teamRepository;
     }
 
     /**
@@ -37,20 +33,17 @@ class TeamController extends Controller
      */
     public function store(TeamRequest $request)
     {
-        dd($request->all());
+        $request['user_id'] = Auth::user()->id;
+        return response()->json($this->teamRepository->saveTeam($request->all()));
     }
-//
-//
-//    /**
-//     * Show the form for editing the specified resource.
-//     *
-//     * @param  \App\c  $c
-//     * @return \Illuminate\Http\Response
-//     */
-//    public function edit(c $c)
-//    {
-//        //
-//    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit($id)
+    {
+        return view('profile.teams.edit');
+    }
 //
 //    /**
 //     * Update the specified resource in storage.

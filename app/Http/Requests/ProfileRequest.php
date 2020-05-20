@@ -32,8 +32,8 @@ class ProfileRequest extends FormRequest
             'avatar_leader' => [new AvatarValidateRule()],
             'name' => 'required',
             'mssv' => ['required', 'unique:profiles,mssv'],
-            'faculties' => 'required',
-            'class' => 'required',
+            'id_faculties' => 'required',
+            'id_class' => 'required',
         ];
 
         if ($request->role == LEADER) {
